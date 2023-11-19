@@ -1,0 +1,16 @@
+## Unsafe options.
+# imports_granularity = "Crate"
+# group_imports = "One"
+# comment_width = 100
+# format_code_in_doc_comments = true
+# imports_layout = "Vertical"
+# wrap_comments = true
+
+use_field_init_shorthand = true
+use_small_heuristics = "Max"
+
+# 들여쓰기에서 space가 아닌 tab키 입력으로 교체합니다.
+hard_tabs = true
+tab_spaces = 1
+
+fn_params_layout = "Compressed"
