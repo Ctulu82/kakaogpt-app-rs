@@ -1,16 +1,234 @@
-## Unsafe options.
-# imports_granularity = "Crate"
-# group_imports = "One"
-# comment_width = 100
-# format_code_in_doc_comments = true
-# imports_layout = "Vertical"
-# wrap_comments = true
 
-use_field_init_shorthand = true
-use_small_heuristics = "Max"
+# https://rust-lang.github.io/rustfmt/?version=v1.6.0
 
-# 들여쓰기에서 space가 아닌 tab키 입력으로 교체합니다.
+## Stable options
+
+# 수직 형식으로 돌아가기 전의 배열 리터럴의 최대 너비입니다. (기본: 60)
+array_width = 60
+
+# 수직 형식으로 돌아가기 전 함수형 속성 인수의 최대 너비입니다. (기본: 70)
+attr_fn_like_width = 70
+
+# 한 줄에 들어갈 수 있는 체인의 최대 너비입니다. (기본: 60)
+chain_width = 60
+
+# ignore 옵션이 안정화되면 이 옵션은 향후 지원 중단될 수 있습니다. Nightly 툴체인 사용자는 가능하면 ignore를 사용하는 것이 좋습니다.(기본: false)
+disable_all_formatting = false
+
+# 파서가 사용하는 에디션을 지정합니다. (기본: 2015 / 2018, 2021)
+edition = "2021"
+
+# 함수 시그니처의 매개변수 레이아웃
+fn_params_layout = "Compressed" # 기본: Tall
+
+# 외부 항목에 대해서는 항상 abi를 print 합니다. (true: "extern "C" {" / false일 경우 "C"는 제거됩니다) 
+force_explicit_abi = true
+
+# 들여쓰기에는 탭 문자를 사용하고 정렬에는 공백을 사용하세요.
 hard_tabs = true
-tab_spaces = 1
 
-fn_params_layout = "Compressed"
+# 매치 암에 선행 파이프를 포함할지 여부를 제어합니다. (기본: Never)
+match_arm_leading_pipes = "Never"
+
+# 블록 기반 일치 항목 뒤에 쉼표를 넣습니다(비블록 항목은 영향을 받지 않음). (기본: false)
+match_block_trailing_comma = false
+
+# 각 라인의 최대 너비 (기본: 100)
+max_width = 100
+
+# 여러 파생 항목을 하나로 병합합니다. (기본: true)
+merge_derives = true
+
+# 개행 스타일 (기본: Auto)
+newline_style = "Auto"
+
+# 중첩된 소괄호를 제거합니다. (기본: true)
+remove_nested_parens = true
+
+# import 및 extern crate 문을 그룹에서 알파벳순으로 재정렬합니다(그룹은 개행 문자로 구분됩니다). (기본: true)
+reorder_imports = true
+
+# 그룹 내에서 mod 선언을 알파벳순으로 재정렬합니다. (기본: true)
+reorder_modules = true
+
+# "짧음"으로 간주되는 배열 요소의 너비 임계값입니다. (기본: 10)
+short_array_element_width_threshold = 10
+
+# 단일 행 if-else 표현식의 최대 행 길이입니다. 값이 0(0)이면 if-else 표현식이 항상 여러 줄로 나누어집니다. (기본: 50)
+single_line_if_else_max_width = 50
+
+# 단일 행 let-else 문의 최대 행 길이입니다. (기본: 50) 
+single_line_let_else_max_width = 50
+
+# 세로 형식으로 돌아가기 전 구조체 리터럴 본문의 최대 너비입니다. 값이 0이면 구조체 리터럴이 항상 여러 줄로 나누어집니다. (기본: 18)
+struct_lit_width = 18
+
+# 수직 형식으로 돌아가기 전 구조체 변형 본문의 최대 너비입니다. 값이 0이면 구조체 리터럴이 항상 여러 줄로 나누어집니다. (기본: 35)
+struct_variant_width = 35
+
+# 탭당 공백 수 (기본: 4)
+tab_spaces = 4
+
+# 가능하면 필드 초기화 약어를 사용하세요. (기본: false)
+use_field_init_shorthand = false
+
+# 서식이 지정된 구성이 너비를 기준으로 여러 줄/세로로 표시되는 경우를 각각 제어하는 ​​세분화된 너비 구성 설정의 관리 및 대량 업데이트를 단순화 (기본: Default)
+use_small_heuristics = "Default"
+
+# try! 매크로의 용도를 ? 속기로 교체합니다.
+use_try_shorthand = true # changed
+
+## Unsafe options.
+
+# 이진 표현식이 여러 줄로 바뀔 때 이진 연산자(||)를 어디에 넣을지 결정합니다.
+# binop_separator = "Front"
+
+# 항목 사이에 넣어야 하는 최소 빈 줄 수입니다. 두 항목 사이에 빈 줄이 적은 경우 추가 빈 줄이 삽입됩니다.
+# blank_lines_lower_bound = 0 # fn()
+
+# 항목 사이에 넣을 수 있는 최대 빈 줄 수입니다. 이 수보다 많은 연속 빈 줄이 발견되면 이 정수와 일치하도록 잘립니다.
+# blank_lines_upper_bound = 1
+
+# 항목의 중괄호 스타일
+# brace_style = "SameLineWhere"
+
+# 컬러 출력을 사용할지 여부입니다.
+# color = "Auto"
+
+# 제어 표현식을 함수 호출과 결합합니다.
+# combine_control_expr = true
+
+# 댓글의 최대 길이입니다. 'wrap_comments = true' 로 설정하지 않는 한 효과가 없습니다.
+# comment_width = 80
+
+# 튜플 패턴에서 _ 와일드카드 문자열을 단일 ..로 대체합니다.
+# condense_wildcard_suffixes = false
+
+# 제어 흐름 구성을 위한 중괄호 스타일
+# control_brace_style = "AlwaysSameLine"
+
+# 문서 주석에 포함된 코드 조각의 최대 너비입니다. format_code_in_doc_comments = true인 경우에만 사용됩니다.
+# doc_comment_code_block_width = 100
+
+# 빈 본문 함수와 암시를 한 줄에 넣습니다. (기본일 경우 'fn lorem() {}')
+# empty_item_single_line = true
+
+# 판별자가 있는 열거형 변형의 최대 길이로 다른 변형과 수직으로 정렬됩니다. (수직으로 '=' 의 정렬을 맞출때 사용)
+# enum_discrim_align_threshold = 0
+
+# Rustfmt가 주석과 문자열 리터럴을 제외하고 max_width 내의 모든 줄을 가져올 수 없으면 오류가 발생합니다 .
+# error_on_line_overflow = false
+
+# max_width 내에서 주석이나 문자열 리터럴을 가져올 수 없거나 후행 공백이 남아 있으면 오류가 발생합니다.
+# error_on_unformatted = false
+
+# 단일 표현식 함수를 한 줄에 넣습니다.
+# fn_single_line = false
+
+# 여러 줄로 된 closure를 강제하고 arm 본체를 블록으로 감싸도록 합니다.
+# force_multiline_blocks = false
+
+# 문서 주석에 포함된 형식 코드 조각입니다. (예: /// ..)
+# format_code_in_doc_comments = false
+
+# 생성된 파일의 형식을 지정합니다. 처음 5줄에 @generated주석 표시가 포함되어 있으면 파일이 생성된 것으로 간주됩니다.
+# format_generated_files = true
+
+# 매크로 본문의 형식을 지정합니다.
+# format_macro_bodies = true
+
+# 매크로에서 메타변수 일치 패턴의 형식을 지정합니다.
+# format_macro_matchers = false
+
+# 필요한 경우 문자열 리터럴 형식을 지정합니다. (true: 한줄이 넘어가면 '\' 로 줄을 바꾸어서 이어갑니다.)
+# format_strings = false
+
+# 연속 가져오기를 그룹화하는 방법에 대한 전략을 제어합니다.
+# group_imports = "Preserve"
+
+# 16진수 리터럴 값의 문자 대소문자를 제어합니다.
+# hex_literal_case = "Preserve"
+
+# 파서가 파일을 구문 분석하지 못한 경우 구문 분석 오류를 표시하지 않습니다.
+# hide_parse_errors = false
+
+# 지정된 패턴과 일치하는 파일 및 디렉터리 형식 지정을 건너뜁니다. 패턴 형식은 .gitignore 와 동일합니다. 
+# ignore = []
+
+# use 문 에서 가져오기가 구성되는 방식을 제어합니다. 가져오기는 구성된 세분성 수준으로 병합되거나 분할됩니다.
+# imports_granularity = "Preserve"
+
+# 들여쓰기 스타일 가져오기
+# imports_indent = "Block"
+
+# imports 블록 내부의 항목 레이아웃
+# imports_layout = "Vertical"
+
+# 표현식이나 항목을 들여씁니다.
+# indent_style = "Block"
+
+# 결합된 너비가 임계값보다 작은 경우 항목과 해당 속성을 같은 줄에 씁니다.
+# inline_attribute_width = 0
+
+# 
+# make_backup = false
+
+# 블록의 첫 번째 줄이 '=>'작업자와 같은 줄에 들어갈 수 없는 경우 중괄호 블록을 감싸는지 여부를 제어합니다.
+# match_arm_blocks = true
+
+# 가능한 경우 /* */ 주석을 // 주석으로 변환합니다.
+# normalize_comments = false
+
+# #![doc] 문서 주석 으로 변환하고 #[doc] //! /// 특성을 지정합니다.
+# normalize_doc_attributes = false
+
+# 구조체, 슬라이스, 배열 및 블록/배열 유사 매크로가 표현식 목록의 마지막 인수로 사용되는 경우 새 줄에 들여쓰기하는 대신 블록/클로저처럼 오버플로되도록 허용하세요.
+# overflow_delimited_expr = false
+
+# impl 항목을 재정렬합니다. 먼저 type 매크로와 const 메소드를 배치합니다.
+# reorder_impl_items = false
+
+# 특정 버전의 Rustfmt가 필요합니다. CI에서 특정 버전의 Rustfmt가 사용되는지 확인하려면 이 옵션을 사용하세요.
+# required_version = "CARGO_PKG_VERSION"
+
+# 라인 외부 모듈을 다시 포맷하지 마십시오.
+# skip_children = false
+
+# 다음 이름을 사용하여 매크로 호출 본문의 형식을 건너뜁니다.
+# skip_macro_invocations = []
+
+# 콜론 뒤에 공백을 허용합니다. (타입 명시용 ':' 에 공백 허용)
+# space_after_colon = true
+
+# 콜론 앞에 공백을 허용합니다.
+# space_before_colon = false
+
+# .., ..= 및 ... 범위 연산자 주위에 공백을 넣습니다.
+# spaces_around_ranges = false
+
+# 서로 정렬될 구조체 필드 간의 최대 너비 차이입니다.
+# struct_field_align_threshold = 0
+
+# 작은 구조체 리터럴을 한 줄에 넣습니다.
+# struct_lit_single_line = true
+
+# 목록의 후행 쉼표를 처리하는 방식.
+# trailing_comma = "Vertical"
+
+# break 후 후행 세미콜론을 추가하고 계속하고 돌아갑니다.
+# trailing_semicolon = true
+
+# 유형의 구두점에서 '+' 또는 '=' 이 공백으로 묶였는지 여뷰 결정합니다.
+# type_punctuation_density = "Wide"
+
+# 불안정한 채널에서 불안정한 기능을 활성화합니다.
+# unstable_features = true # changed
+
+# 사용할 서식 규칙의 버전입니다. Version::OneRustfmt 1.0과 역호환됩니다.
+# version = "One"
+
+# where절이 한 줄에 배치되도록 강제합니다.
+# where_single_line = false
+
+# 줄에 맞게 주석 나누기
+# wrap_comments = false
